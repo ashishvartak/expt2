@@ -1,38 +1,64 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
+//Example for Row Widget
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'FAMT',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
-        title: Text("FAMT"),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.comment),
-            tooltip: 'Comment Icon',
-            onPressed: () {},
-          ), //IconButton
-          IconButton(
-            icon: Icon(Icons.settings),
-            tooltip: 'Setting Icon',
-            onPressed: () {},
-          ), //IconButton
-        ], //<Widget>[]
-        backgroundColor: Colors.greenAccent[400],
-        elevation: 50.0,
-        leading: IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Menu Icon',
-          onPressed: () {},
-        ), //IconButton
-        brightness: Brightness.dark,
-      ), //AppBar
-      body: const Center(
-        child: Text(
-          "IT Department",
-          style: TextStyle(fontSize: 24),
-        ), //Text
-      ), //Center
-    ), //Scaffold
-    debugShowCheckedModeBanner: false, //Removing Debug Banner
-  )); //MaterialApp
+        title: Text("IT Department"),
+      ),
+      body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10), color: Colors.green),
+              child: Text(
+                "TEIT",
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10), color: Colors.green),
+              child: Text(
+                "and",
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10), color: Colors.green),
+              child: Text(
+                "FAMT",
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            )
+          ]),
+    );
+  }
 }
