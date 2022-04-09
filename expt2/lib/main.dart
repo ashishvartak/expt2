@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//This Example is for demonstrating Height and Width property of Container
+//This Example is for demonstrating margin property of Container
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
           height: 200,
           width: double.infinity,
           color: Colors.purple,
+          margin: EdgeInsets.all(20),
           child: Text("Hello! i am inside a container!",
               style: TextStyle(fontSize: 20)),
         ),
