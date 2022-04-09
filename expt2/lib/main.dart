@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//Example for Row Widget
+//Example for Column Widget
 void main() {
   runApp(MyApp());
 }
@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("IT Department"),
       ),
-      body: Row(
+      body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Container(
@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10), color: Colors.green),
               child: Text(
-                "and",
+                "TEIT",
                 style: TextStyle(color: Colors.white, fontSize: 25),
               ),
             ),
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10), color: Colors.green),
               child: Text(
-                "FAMT",
+                "TEIT",
                 style: TextStyle(color: Colors.white, fontSize: 25),
               ),
             )
