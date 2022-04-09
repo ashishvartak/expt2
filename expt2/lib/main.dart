@@ -1,28 +1,48 @@
 import 'package:flutter/material.dart';
 
-//This Example is for demonstrating transform property of Container
-void main() => runApp(MyApp());
+//This example explains FlatButten Widget
+void main() {
+  runApp(MyApp());
+}
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Container example"),
-        ),
-        body: Container(
-          height: 200,
-          width: double.infinity,
-          color: Colors.purple,
-          alignment: Alignment.center,
-          margin: EdgeInsets.all(20),
-          padding: EdgeInsets.all(30),
-          transform: Matrix4.rotationZ(0.1),
-          child: Text("Hello! i am inside a container!",
-              style: TextStyle(fontSize: 20)),
-        ),
-      ),
+          appBar: AppBar(
+            title: Text('Flutter Buttons - FlatButton'),
+          ),
+          body: Center(
+              child: Column(children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(25),
+              child: FlatButton(
+                child: Text(
+                  'Button 1',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                onPressed: () {},
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(25),
+              child: FlatButton(
+                child: Text(
+                  'Button 2',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                color: Colors.cyan,
+                textColor: Colors.black,
+                onPressed: () {},
+              ),
+            ),
+          ]))),
     );
   }
 }
