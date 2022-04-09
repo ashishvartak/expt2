@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//This Example is for demonstrating padding property of Container
+//This Example is for demonstrating alignment property of Container
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
           height: 200,
           width: double.infinity,
           color: Colors.purple,
+          alignment: Alignment.bottomCenter,
           margin: EdgeInsets.all(20),
           padding: EdgeInsets.all(30),
           child: Text("Hello! i am inside a container!",
