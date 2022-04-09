@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//This Example is for demonstrating child property of Container
+//This Example is for demonstrating color property of Container
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
           title: Text("Container example"),
         ),
         body: Container(
+          color: Colors.purple,
           child: Text("Hello! i am inside a container!",
               style: TextStyle(fontSize: 20)),
         ),
