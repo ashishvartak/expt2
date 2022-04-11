@@ -1,61 +1,48 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("Flutter - Icon Button"),
+        ),
         body: Center(
-          child: MyHomePage(),
+          child: MyStatefulWidget(),
         ),
       ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+double _speakervolume = 0.0;
+
+class MyStatefulWidget extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  String? dropdownvalue = 'Flutter';
-
-  @override
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
-    return DropdownButton<String>(
-      value: dropdownvalue,
-      icon: Icon(Icons.arrow_drop_down),
-      iconSize: 25,
-      elevation: 16,
-      style: TextStyle(color: Colors.blue),
-      underline: Container(
-        height: 3,
-        color: Colors.blueAccent,
-      ),
-      onChanged: (String? newValue) {
-        setState(() {
-          dropdownvalue = newValue;
-        });
-      },
-      items: <String>["Flutter", "Java", "Android", "Kotlin", "React Native"]
-          .map<DropdownMenuItem<String>>((String val) {
-        // ignore: missing_required_param
-        return DropdownMenuItem<String>(
-          value: val,
-          child: Text(val),
-        );
-      }).toList(),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        IconButton(
+          icon: Icon(Icons.volume_up),
+          iconSize: 50,
+          color: Colors.brown,
+          tooltip: 'Increase volume by 5',
+          onPressed: () {
+            setState(() {
+              _speakervolume += 5;
+            });
+          },
+        ),
+        Text('Speaker Volume: $_speakervolume')
+      ],
     );
   }
 }
