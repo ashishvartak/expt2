@@ -1,48 +1,61 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+//This example exlains RichText Widget
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
+// This widget is
+//the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Flutter - Icon Button"),
-        ),
-        body: Center(
-          child: MyStatefulWidget(),
-        ),
+      title: 'ClipOval',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: MyHomePAGE(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
-double _speakervolume = 0.0;
-
-class MyStatefulWidget extends StatefulWidget {
+class MyHomePAGE extends StatefulWidget {
   @override
-  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+  _MyHomePAGEState createState() => _MyHomePAGEState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+class _MyHomePAGEState extends State<MyHomePAGE> {
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        IconButton(
-          icon: Icon(Icons.volume_up),
-          iconSize: 50,
-          color: Colors.brown,
-          tooltip: 'Increase volume by 5',
-          onPressed: () {
-            setState(() {
-              _speakervolume += 5;
-            });
-          },
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('FAMTIT'),
+        backgroundColor: Colors.green,
+      ),
+      body: Center(
+          child: RichText(
+        text: TextSpan(
+          text: 'Hello ',
+          style: DefaultTextStyle.of(context).style,
+          children: <TextSpan>[
+            TextSpan(
+                text: 'FAMT', style: TextStyle(fontWeight: FontWeight.bold)),
+          ],
         ),
-        Text('Speaker Volume: $_speakervolume')
-      ],
+      )),
+      backgroundColor: Colors.lightBlue[50],
     );
+  }
+}
+
+class MyClip extends CustomClipper<Rect> {
+  Rect getClip(Size size) {
+    return Rect.fromLTWH(0, 0, 100, 100);
+  }
+
+  bool shouldReclip(oldClipper) {
+    return false;
   }
 }
