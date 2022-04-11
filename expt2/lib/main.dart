@@ -19,17 +19,17 @@ class _MyAppState extends State<MyApp> {
           title: Text("Flutter Floating Action Button"),
           backgroundColor: Colors.blue,
         ),
-        // floatingActionButton: FloatingActionButton(
-        //   child: Icon(Icons.share),
-        //   backgroundColor: Colors.blueAccent,
-        //   foregroundColor: Colors.white,
-        //   onPressed: () => {},
-        // ),
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {},
-          icon: Icon(Icons.account_circle),
-          label: Text("Profile"),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.share),
+          backgroundColor: Colors.blueAccent,
+          foregroundColor: Colors.white,
+          onPressed: () => {},
         ),
+        // floatingActionButton: FloatingActionButton.extended(
+        //   onPressed: () {},
+        //   icon: Icon(Icons.account_circle),
+        //   label: Text("Profile"),
+        // ),
       ),
     );
   }
