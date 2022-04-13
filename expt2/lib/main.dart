@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//This example exlains view of scattered App without using SafeArea
+//This example explains view of scattered App without using SafeArea
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
