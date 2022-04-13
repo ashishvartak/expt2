@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//This example exlains effect of SafeArea widget on view of App
+//This example explains effect of SafeArea widget on view of App
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
